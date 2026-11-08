@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kugoo — Editorial Fashion & Architectural Cinematography</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .font-mono-art { font-family: 'Space Grotesk', sans-serif; }
+  </style>
+</head>
+<body class="bg-[#050505] text-[#F0F0F0] antialiased selection:bg-white selection:text-black">
+
+  <header class="fixed top-0 inset-x-0 z-50 bg-[#050505]/80 backdrop-blur-md border-b border-zinc-900">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <span class="font-mono-art text-xl font-bold tracking-widest uppercase">KUGOO VISUALS</span>
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono uppercase tracking-widest text-zinc-500">
+        <a href="#gallery" class="hover:text-white transition">Selected Works</a>
+        <a href="#exhibitions" class="hover:text-white transition">Exhibitions</a>
+        <a href="#booking" class="hover:text-white transition">Commissions</a>
+      </nav>
+      <a href="#booking" class="px-5 py-2 rounded-full border border-zinc-700 text-xs font-mono uppercase hover:bg-white hover:text-black transition">
+        Book Session
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="pt-36 pb-20 max-w-7xl mx-auto px-6">
+    <div class="max-w-3xl space-y-6">
+      <span class="text-xs font-mono uppercase text-zinc-500">Berlin & Tokyo Studio</span>
+      <h1 class="font-mono-art text-5xl sm:text-7xl font-bold tracking-tight leading-none uppercase">
+        Capturing raw human tension & silent architecture.
+      </h1>
+      <p class="text-zinc-400 text-sm max-w-lg leading-relaxed">
+        Medium format analog and digital cinematography for international fashion houses, architectural monographs, and documentary cinema.
+      </p>
+    </div>
+  </section>
+
+  <!-- Filterable Masonry Gallery -->
+  <section id="gallery" class="py-12 max-w-7xl mx-auto px-6">
+    <div class="flex gap-3 mb-10 font-mono text-xs uppercase">
+      <button onclick="filterPhotos('all')" class="p-btn active px-4 py-2 border border-white bg-white text-black font-bold">All (12)</button>
+      <button onclick="filterPhotos('fashion')" class="p-btn px-4 py-2 border border-zinc-800 text-zinc-400 hover:border-zinc-600">Editorial Fashion</button>
+      <button onclick="filterPhotos('arch')" class="p-btn px-4 py-2 border border-zinc-800 text-zinc-400 hover:border-zinc-600">Monolithic Architecture</button>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="photoGrid">
+      <div class="photo-card group relative overflow-hidden rounded-xl border border-zinc-900 cursor-pointer" data-category="fashion" onclick="openLightbox('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80', 'Vogue Japan Editorial, Tokyo', 'Leica M11 • 50mm f/1.4 • ISO 100')">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Fashion Portrait" class="w-full h-96 object-cover filter grayscale contrast-125 group-hover:scale-105 group-hover:filter-none transition duration-700">
+        <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition">
+          <p class="font-mono text-xs font-bold">Vogue Japan Editorial</p>
+          <span class="text-[10px] text-zinc-400 font-mono">Tokyo, 2026</span>
+        </div>
+      </div>
+
+      <div class="photo-card group relative overflow-hidden rounded-xl border border-zinc-900 cursor-pointer" data-category="arch" onclick="openLightbox('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80', 'Concrete Pavilion Monolith', 'Hasselblad H6D-100c • 28mm • ISO 64')">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Brutalist Architecture" class="w-full h-96 object-cover filter grayscale contrast-125 group-hover:scale-105 group-hover:filter-none transition duration-700">
+        <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition">
+          <p class="font-mono text-xs font-bold">Concrete Pavilion Monolith</p>
+          <span class="text-[10px] text-zinc-400 font-mono">Kyoto, 2026</span>
+        </div>
+      </div>
+
+      <div class="photo-card group relative overflow-hidden rounded-xl border border-zinc-900 cursor-pointer" data-category="fashion" onclick="openLightbox('https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=80', 'Autumn Noir Haute Couture', 'Fujifilm GFX 100 II • 80mm f/1.7 • ISO 160')">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Editorial Fashion" class="w-full h-96 object-cover filter grayscale contrast-125 group-hover:scale-105 group-hover:filter-none transition duration-700">
+        <div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black via-black/60 to-transparent opacity-0 group-hover:opacity-100 transition">
+          <p class="font-mono text-xs font-bold">Autumn Noir Haute Couture</p>
+          <span class="text-[10px] text-zinc-400 font-mono">Paris, 2025</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="hidden fixed inset-0 z-50 bg-black/95 backdrop-blur flex items-center justify-center p-6">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 text-zinc-400 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
+    <div class="max-w-4xl w-full space-y-4">
+      <img id="lbImg" src="" alt="Enlarged" class="w-full max-h-[75vh] object-contain rounded-lg">
+      <div class="flex justify-between items-baseline font-mono text-xs border-t border-zinc-800 pt-3">
+        <h4 id="lbTitle" class="text-white font-bold"></h4>
+        <span id="lbExif" class="text-zinc-500"></span>
+      </div>
+    </div>
+  </div>
+
+  <footer class="border-t border-zinc-900 py-12 text-center text-xs font-mono text-zinc-600">
+    <p>© 2026 Kugoo Visuals. All photographic rights reserved worldwide.</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    function filterPhotos(cat) {
+      document.querySelectorAll('.p-btn').forEach(b => {
+        b.className = 'p-btn px-4 py-2 border border-zinc-800 text-zinc-400 hover:border-zinc-600';
+      });
+      event.target.className = 'p-btn active px-4 py-2 border border-white bg-white text-black font-bold';
+
+      document.querySelectorAll('.photo-card').forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    function openLightbox(src, title, exif) {
+      document.getElementById('lbImg').src = src;
+      document.getElementById('lbTitle').textContent = title;
+      document.getElementById('lbExif').textContent = exif;
+      document.getElementById('lightbox').classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>
